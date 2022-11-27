@@ -1,10 +1,26 @@
-FROM anshumanpm2006/mltb:heroku
+FROM ghcr.io/amirulandalib/mltb-alpine-docker:latest
 
+# if you want to load image from dockerhub then replace the above one with this one 👇
+# FROM amirulandalib/mltb-alpine-docker:latest
 
-WORKDIR /usr/src/app
-RUN chmod 777 /usr/src/app
 
 COPY . .
-RUN pip3 install --no-cache-dir -r requirements.txt
+
+# WORKDIR /usr/src/app
+
+# RUN chmod 777 /usr/src/app
+
+# RUN pip3 install --no-cache-dir -r requirements.txt
 
 CMD ["bash", "start.sh"]
+
+# FROM anshumanpm2006/mltb:heroku
+
+
+# WORKDIR /usr/src/app
+# RUN chmod 777 /usr/src/app
+
+# COPY . .
+# RUN pip3 install --no-cache-dir -r requirements.txt
+
+# CMD ["bash", "start.sh"]
